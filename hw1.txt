@@ -1,0 +1,74 @@
+Johanna Liu
+Prof. Gu
+CS 161
+24 Jan 2023
+
+Homework 1
+
+1. PAD
+    Tests:
+    PAD(0) = 1
+    PAD(1) = 1
+    PAD(2) = 1
+    PAD(3) = 2
+    PAD(4) = 2
+    PAD(5) = 3
+    PAD(6) = 4
+    PAD(7) = 5
+    PAD(8) = 7
+    PAD(9) = 9
+    PAD(10) = 12
+    PAD(11) = 16
+    PAD(12) = 21
+
+    When I tried testing my program for larger values of N (up to 50) I didn't notice any notable lag in response time.
+    PAD(20) = 200
+    PAD(25) = 816
+    PAD(30) = 3329
+    PAD(35) = 13581
+    PAD(40) = 55405
+    PAD(45) = 226030
+    PAD(50) = 922111
+
+    At around N= 55 and onwards there was a noticeable lag in response time.
+    PAD(55) = 3761840
+    PAD(60) = 15346786
+
+    At N = 65 was when I noticed a significant lag in response time (around 10 seconds).
+    PAD(65) = 62608681
+
+    N = 70 took around 1 minute.
+    PAD(70) = 255418101 (took around 1 minute)
+
+    N = 75 took around 5 minutes. At this point, I stopped testing any higher values of of concern for my laptop's fan.
+    PAD(75) = 1042002567
+
+    The reason why I started quickly getting such long response times despite testing relatively small N values is likely because
+    I used a recursive approach. Recursive functions increase the time complexity exponentially so it takes longer than 
+    iterative approaches. (After implementing the SUMS function, we now know the exact number of calculations for each N value.
+    For example, when looking at the answer for (2), we see that even going from N = 11 to N = 12, there is a larger jump in 
+    the number of calculations, 5, compared to before.)
+
+2. SUMS
+    Tests:
+    SUMS(0) = 0
+    SUMS(1) = 0
+    SUMS(2) = 0
+    SUMS(3) = 1
+    SUMS(4) = 1
+    SUMS(5) = 2
+    SUMS(6) = 3
+    SUMS(7) = 4
+    SUMS(8) = 6
+    SUMS(9) = 8
+    SUMS(10) = 11
+    SUMS(11) = 15
+    SUMS(12) = 20
+
+    SUMS represents the complexity/number of additions or computations that each term in the Padovan sequence requires.
+    The relationship between the values returned by PAD and those returned by SUMS is that the values returned by PAD are 
+    1 more than the values returned by SUMS for the same inputs. (This could be because both functions have the same/similar
+    logic, but the SUMS function has its base cases return 0 while the PAD function has its base cases return 1.) An iterative
+    approach to implementing PAD and SUMS would not have this "increasingly increasing" time complexity because it would not have 
+    to repeat computations over and over again--exponentially increasing the number of computations. Thus, it makes sense that both 
+    PAD and SUMS increase similarily exponentially.
